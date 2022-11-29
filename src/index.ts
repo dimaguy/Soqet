@@ -11,7 +11,7 @@ import pollingsocket from "./protocols/pollingsocket";
 
 import Prometheus from "./prometheus";
 
-const config = require("../config.json");
+const config = require("../config/config.json");
 const pack = require("../package.json");
 
 console.log(`Soqet ${pack.version}`);

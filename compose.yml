@@ -1,0 +1,31 @@
+name: soqet
+services:
+  soqet:
+    container_name: soqet
+    environment:
+      PGID: "1000"
+      PUID: "1000"
+      TZ: Europe/London
+    image: soqet
+    build:
+      dockerfile: ./Dockerfile
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 25555
+      published: "25555"
+      protocol: tcp
+    - mode: ingress
+      target: 3004
+      published: "3004"
+    restart: unless-stopped
+    volumes:
+    - type: bind
+      source: ./config/
+      target: /app/config/
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: soqet_default

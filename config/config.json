@@ -3,7 +3,7 @@
   "httpPort": 3004,
   "tcpPort": 25555,
   "enableWebsocket": true,
-  "enableTCPSocket": true,
+  "enableTCPSocket": false,
   "enablePolling": true,
   "pollingInterval": 3600,
   "enablePrometheus": true
